@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "meeting",
-    "slug": "meeting",
+    "name": "projet-react-native",
+    "slug": "projet-react-native",
     "platforms": [
       "ios",
       "android",
