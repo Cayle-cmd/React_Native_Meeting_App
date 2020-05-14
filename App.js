@@ -5,8 +5,7 @@ import {
   Dimensions, TouchableOpacity } from 'react-native';
   import DateTimePickerModal from "react-native-modal-datetime-picker";
   import  moment from "moment";
-
-import Logo from './src/Logo';
+  import Logo from './src/Logo';
 
 var width = Dimensions.get('window').width; //full width
 
@@ -48,28 +47,30 @@ export default class AjoutRuinion extends React.Component {
         <Logo />
 
         <Text
-       style={styles.titre}>Add a meeting</Text>
+       style={styles.titre}>Ajouter une reuinion</Text>
 
+       <Text style={styles.titreTextInput}>
+        Lieu
+       </Text>
         <TextInput
-          placeholder='Location'
-          placeholderTextColor="#a4a4a4"
-          color='#ffffff'
+          placeholder='ex: Dakar, Plateau ...'
+          multiline = {false}
           value={this.name}
           style={styles.simpleInput}
           />
         <TouchableOpacity
           style={styles.buttonDate}
-          onPress = {this.showPicker} >
-          <Text style={styles.clickHere}>Click here</Text>
-          <Text style={styles.dateTime}> Date & Time </Text>
+          onPress = {this.showPicker}>
+          <Text style={styles.textButtonDate}>choisir la date</Text>
         </TouchableOpacity>
-        <Text style={{ color:'#00b0ff' , fontSize:20}}>
+        <Text style={styles.choosenDate}>
             {this.state.choosenDate}
         </Text>
+
+        <Text style={styles.titreTextInput}>
+         Sujet
+        </Text>
         <TextInput
-          placeholder='Subject of the meeting'
-          placeholderTextColor="#a4a4a4"
-          color='#ffffff'
           style={styles.simpleInput}
           />
 
@@ -81,17 +82,19 @@ export default class AjoutRuinion extends React.Component {
           is24Hour ={false}
         />
 
+
+        <Text style={styles.titreTextInput}>
+         Participants
+        </Text>
         <TextInput
-          placeholder='list of participants: email & address'
-          placeholderTextColor="#a4a4a4"
+          placeholder='Email / Adresse '
           multiline = {true}
-          numberOfLines = {4}
-          color='#ffffff'
+          numberOfLines = {10}
           style={styles.textAreaInput}
           />
         <TouchableOpacity
           style={styles.buttonSave}>
-          <Text style={{color:'#ffff00'}}>Save</Text>
+          <Text style={styles.textButtonSave}>Enregistrer</Text>
         </TouchableOpacity>
       </View>
     )
@@ -101,77 +104,72 @@ export default class AjoutRuinion extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#546e7a',
-    alignItems: 'center',
+    backgroundColor: '#fff',
+    alignItems: 'center'
   },
 
-
-
-  simpleInput: {
-    marginTop: 15,
-    height: 50,
-    borderColor: 'gold',
-    borderWidth: 1,
-    width:300,
-    backgroundColor:'#bdbdbd',
-    color:'white',
-    borderRadius:25,
-    paddingHorizontal:16,
-    fontSize:16,
-    marginVertical:10,
-    paddingVertical:5,
-  },
-
-
-
-  buttonSave: {
-    marginTop:20,
-    marginBottom:10,
-    backgroundColor: 'black',
-    borderRadius: 20,
-    width: 100,
-    height: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonDate: {
-    marginTop:10,
-    borderRadius: 20,
-    width: 100,
-    height: 40,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  textAreaInput: {
-    width: 350,
-    marginTop: 30,
-    height: 100,
-    borderColor: 'gold',
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    marginBottom: 10,
-    borderRadius:25,
-
-  },
   titre: {
+    marginBottom: 10,
+    fontSize:25
+  },
+
+  titreTextInput: {
+    marginTop:10,
     fontSize:20
   },
 
-  dateTime : {
-    fontSize : 18,
-    marginBottom:10,
-    width: 104,
+  simpleInput: {
+    width: width - 40,
+    height: 25,
+    borderColor: '#c0c0c0',
+    backgroundColor:'#fffaf0',
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderRadius:10,
+  },
+
+  buttonDate: {
+    marginTop:10,
+    borderRadius: 20,
+    borderWidth: 1,
+    backgroundColor:'#000000',
+    width: 100,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  textButtonDate: {
+    color:'#ffd700'
+  },
+  choosenDate:{
+    color:'#00b0ff' ,
+    fontSize:20
+  },
+
+  textAreaInput: {
+    width: width - 40,
+    height: 70,
+    borderColor: '#c0c0c0',
+    backgroundColor:'#fffaf0',
+    borderWidth: 1,
+    paddingHorizontal: 15,
+    borderRadius:10,
+    marginBottom: 10
+  },
+
+  buttonSave: {
+    marginTop:10,
+    backgroundColor: '#000000',
+    borderRadius: 20,
+    width: 100,
     height: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    color:'gold',
-
+    marginBottom:5,
   },
 
-  clickHere : {
-    color:'#ffff00',
-    alignItems: 'flex-end',
-    marginTop:10,
+  textButtonSave: {
+    color:'#ffd700',
   }
 
 });
