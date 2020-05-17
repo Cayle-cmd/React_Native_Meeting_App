@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import AddReunion from "./AddReunion";
 import ListReunions from "./ListReunions";
+import Home from "./Home";
 
 const Stack = createStackNavigator();
 
@@ -20,7 +21,11 @@ export default function App() {
           component={AddReunion}
           options={{ title: "Ajout réunion" }}
         />
-        
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ title: "Home" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

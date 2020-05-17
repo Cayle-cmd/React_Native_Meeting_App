@@ -1,5 +1,7 @@
 import React from "react";
-import { Button } from "react-native";
+import {
+  StyleSheet, Text,
+  View, Button } from 'react-native';
 
 export default class ListReunions extends React.Component {
   constructor(props) {
@@ -9,10 +11,16 @@ export default class ListReunions extends React.Component {
 
   render() {
     return (
-      <Button
-        title="Ajouter reunion"
-        onPress={() => this.navigation.navigate("Add")}
-      />
+      <View>
+        <Button
+          title="Ajouter reunion"
+          onPress={() => this.navigation.navigate("Add")}/>
+        <Text>
+        </Text>
+        <Button
+          title="Home "
+          onPress={() => this.navigation.navigate("Home")}/>
+      </View>
     );
   }
 }
