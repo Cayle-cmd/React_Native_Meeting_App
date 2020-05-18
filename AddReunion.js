@@ -10,7 +10,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import  moment from "moment";
-import Logo from './src/Logo';
 
 var width = Dimensions.get('window').width; //full width
 
@@ -47,14 +46,8 @@ export default class ListReunions extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-
-        <Logo />
-
-        <Text
-       style={styles.titre}>Ajouter une reuinion</Text>
-
        <Text style={styles.titreTextInput}>
-        Lieu
+        Location
        </Text>
         <TextInput
           placeholder='ex: Dakar, Plateau ...'
@@ -65,14 +58,14 @@ export default class ListReunions extends React.Component {
         <TouchableOpacity
           style={styles.buttonDate}
           onPress = {this.showPicker}>
-          <Text style={styles.textButtonDate}>choisir la date</Text>
+          <Text style={styles.textButtonDate}>Date & Time</Text>
         </TouchableOpacity>
         <Text style={styles.choosenDate}>
             {this.state.choosenDate}
         </Text>
 
         <Text style={styles.titreTextInput}>
-         Sujet
+         Topic
         </Text>
         <TextInput
           style={styles.simpleInput}
@@ -98,7 +91,7 @@ export default class ListReunions extends React.Component {
           />
         <TouchableOpacity
           style={styles.buttonSave}>
-          <Text style={styles.textButtonSave}>Enregistrer</Text>
+          <Text style={styles.textButtonSave}>Save</Text>
         </TouchableOpacity>
       </View>
     )
@@ -112,19 +105,16 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
 
-  titre: {
-    marginBottom: 10,
-    fontSize:25
-  },
+
 
   titreTextInput: {
-    marginTop:10,
+    marginTop:30,
     fontSize:20
   },
 
   simpleInput: {
     width: width - 40,
-    height: 25,
+    height: 30,
     borderColor: '#c0c0c0',
     backgroundColor:'#fffaf0',
     paddingHorizontal: 10,
@@ -152,7 +142,7 @@ const styles = StyleSheet.create({
 
   textAreaInput: {
     width: width - 40,
-    height: 70,
+    height: 160,
     borderColor: '#c0c0c0',
     backgroundColor:'#fffaf0',
     borderWidth: 1,
