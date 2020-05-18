@@ -93,6 +93,12 @@ export default class ListReunions extends React.Component {
           style={styles.buttonSave}>
           <Text style={styles.textButtonSave}>Save</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.ButtonCancel}>
+          <Text style={styles.textButtonCancel}>Cancel</Text>
+        </TouchableOpacity>
+
       </View>
     )
   }
@@ -142,7 +148,7 @@ const styles = StyleSheet.create({
 
   textAreaInput: {
     width: width - 40,
-    height: 160,
+    height: 120,
     borderColor: '#c0c0c0',
     backgroundColor:'#fffaf0',
     borderWidth: 1,
@@ -159,11 +165,25 @@ const styles = StyleSheet.create({
     height: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom:5,
   },
 
   textButtonSave: {
     color:'#ffd700',
-  }
+  },
+
+  textButtonCancel :{
+    color:'#ffd700',
+  },
+
+  ButtonCancel: {
+    marginTop:10,
+    backgroundColor: '#000000',
+    borderRadius: 20,
+    width: 100,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom:5,
+  },
 
 });
