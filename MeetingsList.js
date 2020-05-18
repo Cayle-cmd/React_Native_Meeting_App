@@ -13,7 +13,7 @@ export default class MeetingsList extends React.Component {
 
   render() {
     return (
-      <View style={{marginTop:75, }}>
+      <View style={styles.container}>
         <Logo />
       </View>
     )
@@ -21,5 +21,9 @@ export default class MeetingsList extends React.Component {
 }
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1,
+    backgroundColor:'#ffd700',
+    alignItems:'stretch'
+  }
   });

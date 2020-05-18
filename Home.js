@@ -13,10 +13,8 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <View>
-        <Text style={{marginBottom:50}}></Text>
+      <View style={styles.container}>
         <Logo />
-        <Text style={{marginBottom:100}}></Text>
         <Button
           title="Add a meeting"
           onPress={() => this.navigation.navigate("Add")}/>
@@ -25,7 +23,16 @@ export default class Home extends React.Component {
         <Button
           title="List of meetings "
           onPress={() => this.navigation.navigate("List")}/>
+        <Text style={{marginBottom:200}}></Text>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor:'#ffd700',
+    textDecorationColor:'#ffffff'
+  }
+});
